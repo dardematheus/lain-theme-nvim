@@ -57,6 +57,18 @@ function M.setup()
         ["@import"] = {fg = colors.red1},
     }
 
+    local tree = {
+        NvimTreeFolderName = {fg = colors.red1},
+        NvimTreeOpenedFolderName = {fg = colors.red1},
+        NvimTreeEmptyFolderName = {fg = colors.red1},
+        NvimTreeFolderIcon = {fg = colors.red2},
+        NvimTreeRootFolder = {fg = colors.red2},
+
+        NvimTreeOpenedFile = {fg = colors.fg},
+        NvimTreeCursorLine = {fg = colors.opaque},
+    }
+    for g, o in pairs(tree) do highlights[g] = o end
+
     for group, opts in pairs(highlights) do
         vim.api.nvim_set_hl(0, group, opts)
     end
